@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="POST" action="form_test2">
+		<!-- param key : gul -->
+		Gul <input type="text" name="gul" size="50" /> <br><br>
+		
+		<!--  [checkbox] checkbox 를 체크하면 해당 value가, 아니면 null이 넘어간다. -->
+		Love <input type="checkbox" name="love" value="apple" />
+		Hate<input type="checkbox" name="hate" value="banana" /> <br>
+		
+		<!--  [radio] 같은 이름을 가진 radio 는 하나만 체크가 가능하다. -->
+		Plus <input type="radio" name="method" value="plus" />
+		Minus <input type="radio" name="method" value="minus" checked="checked" /> <br>
+		
+		<!-- [password] type text와 동일하지만, 값이 노출되지 않는다. -->
+		Password <input type="password" name="pwd" size="16" /> <br><br>
+		
+		<!-- [textarea] 여러 줄을 입력할 때 사용된다. -->
+		<!-- 태그 안의 값이 default -->
+		<!-- rows: 가로줄, cols: 세로줄 -->
+		Content <br>
+		<textarea name="content" rows="7" cols="10"> HelloWorld </textarea> <br>
+		
+		<!-- [select] option 중 하나 선택 -->
+		Animal 
+		<select name="animal">
+			<option value="dog">개</option>
+			<option value="cat">고양이</option>
+			<option value="mouse">쥐</option>
+			<option value="tiger">호랑이</option>
+			<option value="wolf">늑대</option>
+		</select> <br>
+		
+		<input type="submit"/>
+	</form>
+</body>
+</html>
