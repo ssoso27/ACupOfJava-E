@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+	<servlet>
+		<servlet-name>lifeServlet</servlet-name>
+		<servlet-class>study3.LifeServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>configServlet</servlet-name>
+		<servlet-class>study3.ConfigServlet</servlet-class>
+		<init-param>
+			<param-name>apple</param-name>
+			<param-value>ILikeApple</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>lifeServlet</servlet-name>
+		<url-pattern>/life</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>configServlet</servlet-name>
+		<url-pattern>/config</url-pattern>
+	</servlet-mapping>
+</web-app>
