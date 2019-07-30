@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+	
+	<servlet>
+		<servlet-name>abcd</servlet-name>
+		<servlet-class>study2.HelloWorld3</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>abcd2</servlet-name>
+		<servlet-class>study2.FormTestServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>abcd3</servlet-name>
+		<servlet-class>study2.BangMyung2List</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>abcd4</servlet-name>
+		<servlet-class>study2.BangMyung2Add2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>abcd4</servlet-name>
+		<url-pattern>/bangmyung_add2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>abcd3</servlet-name>
+		<url-pattern>/bangmyung_list</url-pattern>
+	</servlet-mapping>
+		
+	<servlet-mapping>
+		<servlet-name>abcd2</servlet-name>
+		<url-pattern>/form_test2</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>abcd</servlet-name>
+		<url-pattern>/study2</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<!--
+	submit 을 누르면 , action 에 지정된 페이지를 요청한다.
+		form 안의 input 에 입력된 정보를 물고 간다.
+		이 정보는 요청받은 서블릿의 request.getParameter 로 추출한다.
+		
+		name 에 지정된 값을 키값으로 사용한다.
+	-->
+	<form method="POST" action="form_test2">
+		<input type="text" name="gul" size="50"/>
+		
+		<!--
+			checkbox 는 체크 후에 넘기면 value 에 지정된 값이 읽혀지고 
+			체크 없이 넘기면 null 값을 읽게 된다.
+		-->
+		<input type="checkbox" name="abcd" value="apple"/>
+		<input type="checkbox" name="xyzz" value="banana"/>
+		
+		<!--
+			같은 이름을 가진 radio 는 하나만 체크 가능하다.
+			checked="checked" 는 기본적으로 체크된 상태로 보여진다.
+		-->
+		<input type="radio" name="method" value="plus" checked="checked"/>
+		<input type="radio" name="method" value="minus"/>
+		
+		<!--
+			type="text" 와 같은데 입력 내용이 보여지지 않는다.
+		-->
+		<input type="password" name="pwd" size="16"/>
+		
+		<!--
+			여러줄을 입력할때 사용한다. 
+			HelloWorld 와 같이 태그안에 들어가는 내용은 디폴트로 보여진다.
+			
+			rows="7" 상하크기 , cols="50" 좌우크기 ( 7줄 50글자 )
+		-->
+		<br/><br/><br/>
+		<textarea rows="7" cols="50" name="content">HelloWorld</textarea>
+		
+		<!--
+			흔히 콤보박스라는 선택창이 나오고 그 중의 하나를 선택할 수 있다.
+		-->
+		<br/><br/><br/>
+		<select name="fruit">
+			<option value="apple">사과</option>
+			<option value="banana">바나나</option>
+			<option value="orange">오렌지</option>
+			<option value="kiwi">키위</option>
+		</select>
+		
+		<input type="submit"/>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
