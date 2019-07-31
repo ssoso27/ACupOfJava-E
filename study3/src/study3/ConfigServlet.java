@@ -47,7 +47,7 @@ public class ConfigServlet extends HttpServlet {
 		
 		// request Header °ª
 		String o = request.getHeader("User-Agent");
-		System.out.println(o); // Mozilla/5.0 (Linux; Android 7.0; SAMSUNG SM-N920S Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.4 Chrome/67.0.3396.87 Mobile Safari/537.36
+		System.out.println(o); // Mozilla/5.0 (Linux; Android 7.0; ... Chrome/67.0.3396.87 Mobile Safari/537.36
 
 	}
 
