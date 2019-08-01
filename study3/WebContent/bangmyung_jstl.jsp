@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8" import="java.util.List, bangmyung.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="sso" %>
 <%!
 	public void submit() {
 		System.out.println("submit");
@@ -25,6 +26,7 @@
     	response.setCharacterEncoding("utf-8");
     	response.sendRedirect("/study3/error.jsp");
     } else { 
+    	request.setAttribute("lst", rl);
 %>
 <!DOCTYPE>
 <html>
@@ -35,13 +37,15 @@
 		<td>글</td>
 		<td>작성시간</td>
 	</tr>
-	<% for (BangMyungVO vo : rl) { %>
-	<tr>
-		<td><%= vo.getNo() %></td>
-		<td><%= vo.getGul() %></td>
-		<td><%= vo.getTheTime() %></td>
-	</tr>
-	<% } %>
+	
+	<sso:forEach varStatus="vs" var="vo" items="${ lst }">
+		<tr bgColor="${ (vs.count % 2 != 0)?'#aabbcc':'#bbccdd' }">
+			<td>${ vs.count }</td>
+			<td>${ vo.no }</td>
+			<td>${ vo.gul }</td>
+			<td>${ vo.theTime }</td>
+		</tr>
+	</sso:forEach>
 </table>
 <form method="POST" action="bangmyung_add.jsp">
 	<input type="text" name="gul" size="50"/>

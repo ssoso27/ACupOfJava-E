@@ -9,22 +9,25 @@ import java.util.List;
 
 public class BangMyungDAO_OracleImpl implements BangMyungDAO 
 {
+	private String url = "jdbc:oracle:thin:@127.0.0.1:1521/XE";
+	private String user = "HR";
+	private String pw = "hr";
+	
 	@Override
 	public void add(BangMyungVO vo) throws Exception 
 	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection conn = null;
 		Statement stmt = null;
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@127.0.0.1:1521/XE","HR","HR");
+			conn = DriverManager.getConnection(url, user, pw);
 			stmt = conn.createStatement();
 			
 			String sql = "insert into bangmyung_t values ( seq_bangmyung.nextval, '"+
 				vo.getGul() + "', sysdate )";
 			stmt.executeUpdate( sql );
 		}
-		catch( Exception e ){}
+		catch( Exception e ){ throw e; }
 		finally {
 			if( stmt != null ) stmt.close();
 			if( conn != null ) conn.close();
@@ -39,8 +42,7 @@ public class BangMyungDAO_OracleImpl implements BangMyungDAO
 		ResultSet rs = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@127.0.0.1:1521/XE","HR","HR");
+			conn = DriverManager.getConnection(url, user, pw);
 			stmt = conn.createStatement();
 			
 			String sql = "SELECT no, gul, the_time FROM bangmyung_t order by no desc";
@@ -55,7 +57,7 @@ public class BangMyungDAO_OracleImpl implements BangMyungDAO
 				ls.add( vo );
 			}			
 		}
-		catch( Exception e ){}
+		catch( Exception e ){ throw e; }
 		finally {
 			if( rs != null ) rs.close();
 			if( stmt != null ) stmt.close();

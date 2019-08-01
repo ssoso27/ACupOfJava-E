@@ -1,0 +1,22 @@
+DROP TABLE talk_root_t;
+
+CREATE TABLE talk_room_t (
+	room_no number(5),
+	apple char(4),
+	banana char(4),
+	orange char(4)
+);
+
+INSERT INTO talk_root_t values ( 0, '1234', '2345', '3456' );
+COMMIT;
+
+CREATE TABLE talk (
+	talk_no number(6),
+	room_no number(5),
+	content varchar2(120)
+);
+
+CREATE SEQUENCE seq_talk;
+
+INSERT INTO talk_t values ( seq_talk.NEXTVAL, 0, 'hello zito zito' );
+COMMIT;
