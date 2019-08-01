@@ -5,7 +5,7 @@ import vo.TalkRoomVO;
 public class TalkRoomDAO_OracleImpl implements TalkRoomDAO {
 
 	@Override
-	public String findPermissionByRoomNoANDPassword(Integer roomNo, String password) {
+	public String findPermissionByRoomNoANDPassword(int roomNo, String password) {
 		return password;
 	}
 

@@ -5,7 +5,7 @@
 
 <%
 	String ctxPath = request.getContextPath();
-	Integer roomNo = Util.parseIntOr( request.getParameter("roomNo"), -1 );
+	int roomNo = Util.parseIntOr( request.getParameter("roomNo"), -1 );
 	String password = request.getParameter("pwd");
 	
 	Exception err = null;
@@ -14,7 +14,9 @@
 	try {
 		TalkRoomDAO dao = new TalkRoomDAO_OracleImpl();
 		permission = dao.findPermissionByRoomNoANDPassword(roomNo, password);
-		System.out.println(permission);
+
+		session.setAttribute("roomNo", roomNo);
+		session.setAttribute("permission", permission);
 	} catch (Exception e) {
 		err = e;
 	}

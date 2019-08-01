@@ -3,5 +3,5 @@ package dao;
 import vo.TalkRoomVO;
 
 public interface TalkRoomDAO {
-	public String findPermissionByRoomNoANDPassword(Integer roomNo, String password);
+	public String findPermissionByRoomNoANDPassword(int roomNo, String password);
 }
