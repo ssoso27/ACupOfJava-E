@@ -1,6 +1,6 @@
 package utils;
 
-public class Util {
+public class OldUtil {
 	public static int parseInt( String str ) {
 		try {
 			int r = Integer.parseInt(str);
