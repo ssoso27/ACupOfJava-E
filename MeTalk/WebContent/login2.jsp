@@ -4,6 +4,7 @@
 <%@ page import="vo.*" %>
 
 <%
+	String ctxPath = request.getContextPath();
 	Integer roomNo = Util.parseIntOr( request.getParameter("roomNo"), -1 );
 	String password = request.getParameter("pwd");
 	
@@ -23,12 +24,16 @@
 	} else {
 		switch( Util.nullToBlank(permission) ){
 			case "apple":
+				response.sendRedirect(ctxPath + "/view_apple.jsp");
 				break;
 			case "banana":
+				response.sendRedirect(ctxPath + "/view_banana.jsp");
 				break;
 			case "orange":
+				response.sendRedirect(ctxPath + "/view_orange.jsp");
 				break;
 			default:
+				Util.redirectLogin(pageContext);
 				break;
 		}
 	}
