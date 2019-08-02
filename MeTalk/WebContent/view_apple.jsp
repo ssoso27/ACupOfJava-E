@@ -6,6 +6,7 @@
 <%@ page import="java.util.*" %>
 
 <%
+String ctxPath = request.getContextPath();
 int roomNo = (Integer)session.getAttribute("roomNo");
 String permission = (String) session.getAttribute("permission");
 
@@ -41,5 +42,9 @@ if (err != null) Util.sendErr(pageContext, err);
 		</tr>
 	<% } %>
 	</table>
+	<form method="POST" action="<%= ctxPath %>/add2.jsp">
+		<input type="text" name="content"/>
+		<input type="submit" value="º¸³»±â"/>
+	</form>
 </body>
 </html>
