@@ -24,6 +24,17 @@
 		<servlet-name>sessionServlet</servlet-name>
 		<servlet-class>study3.SessionServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>fileupServlet</servlet-name>
+		<servlet-class>study3.FileUpServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>fileDownServlet</servlet-name>
+		<servlet-class>study3.FileDownServlet</servlet-class>
+	</servlet>
+	
 
 	<servlet-mapping>
 		<servlet-name>lifeServlet</servlet-name>
@@ -43,5 +54,15 @@
 	<servlet-mapping>
 		<servlet-name>sessionServlet</servlet-name>
 		<url-pattern>/session</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>fileupServlet</servlet-name>
+		<url-pattern>/fileup</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>fileDownServlet</servlet-name>
+		<url-pattern>/fileDown</url-pattern>
 	</servlet-mapping>
 </web-app>
